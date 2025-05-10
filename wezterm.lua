@@ -11,6 +11,12 @@ config.color_scheme = "ayu"
 
 config.font = wezterm.font("PragmataProMonoLiga Nerd Font")
 config.font_size = 16
+config.audible_bell = "Disabled"
+config.disable_default_mouse_bindings = false
 
--- and finally, return the configuration to wezterm
+--
+wezterm.plugin
+	.require("https://github.com/yriveiro/wezterm-tabs")
+	.apply_to_config(config, { tabs = { tab_bar_at_bottom = false } })
+
 return config
